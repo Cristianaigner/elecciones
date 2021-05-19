@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "20017391546",
+    "project_id": "elecciones-firestore",
+    "storage_bucket": "elecciones-firestore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20017391546:android:f1a4db1bb2777172e4df83",
+        "android_client_info": {
+          "package_name": "com.example.elecciones"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20017391546-8tmivndg1paj550tjkletouvgksgde7f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.elecciones",
+            "certificate_hash": "369b4d7d37030401bca7c98c03467baf665dc7d1"
+          }
+        },
+        {
+          "client_id": "20017391546-6qh9bktl3e1gud70ut4irulca7c24u4l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzjUTKTiEJIxyBH4KOW2GdXW4l0f4CM8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20017391546-6qh9bktl3e1gud70ut4irulca7c24u4l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
