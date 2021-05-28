@@ -1,13 +1,24 @@
-
-
-
 import 'package:elecciones/utils/lista_escuela.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
-class HomeController extends GetxController{
+class HomeController extends GetxController {
+  String vacio = 'Seleccione Escuela';
   String circuitoSel;
-  String escuelaSel ;
+  String escuelaSel;
+  final box = GetStorage();
+  List<DropdownMenuItem<String>> lista = [];
+
+  void press() {
+    box.write('circuito', circuitoSel);
+    box.write('escuela', escuelaSel);
+    box.write('carga', true);
+    print(box.read('circuito'));
+    print(box.read('escuela'));
+    Get.toNamed('principal');
+  }
 
   Widget crearCircuito() {
     return Padding(
@@ -55,11 +66,12 @@ class HomeController extends GetxController{
           ],
           onChanged: (cir) {
             circuitoSel = cir;
-            
-            update();
+            escuelaSel = vacio;
+            update(['circuito']);
           }),
     );
   }
+
   Widget crearEscuela() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -76,54 +88,52 @@ class HomeController extends GetxController{
           iconEnabledColor: Colors.blueAccent,
           value: escuelaSel,
           hint: Text('Seleccione escuela'),
-          
-
-          items:getOpcionesDrop(),
-          
-           
+          items: getOpcionesDrop(),
           onChanged: (cir) {
-            
             escuelaSel = cir;
+
             update(['escuela']);
           }),
     );
   }
-List<DropdownMenuItem<String>> getOpcionesDrop() {
-    List<DropdownMenuItem<String>> lista = [];
-  
-  switch (circuitoSel) {
-    case '259':
-      lista = [];  
-         lista269.forEach((act) {
-         lista.add(DropdownMenuItem(
-         child: Text(act),
-         value: act,
-       ));
-       });
-      break;
-    case '260':
-      lista = [];  
-         lista260.forEach((act) {
-         lista.add(DropdownMenuItem(
-         child: Text(act),
-         value: act,
-       ));
-       });
-      break;
-    case '261':
-      lista = [];  
-         lista261.forEach((act) {
-         lista.add(DropdownMenuItem(
-         child: Text(act),
-         value: act,
-       ));
-       });
-      break;
-    
-    default: Text('Seleccione Escuela');
-  }
-      return lista;
-  }
 
+  List<DropdownMenuItem<String>> getOpcionesDrop() {
+    switch (circuitoSel) {
+      case '259':
+        lista = [];
+        lista259.forEach((act) {
+          lista.add(DropdownMenuItem(
+            child: Text(act),
+            value: act,
+          ));
+        });
 
+        break;
+      case '260':
+        lista = [];
+        lista260.forEach((act) {
+          lista.add(DropdownMenuItem(
+            child: Text(act),
+            value: act,
+          ));
+        });
+
+        break;
+      case '261':
+        lista = [];
+        lista261.forEach((act) {
+          lista.add(DropdownMenuItem(
+            child: Text(act),
+            value: act,
+          ));
+        });
+
+        break;
+
+      default:
+        lista = [];
+        Text(vacio);
+    }
+    return lista;
+  }
 }

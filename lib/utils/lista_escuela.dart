@@ -21,8 +21,10 @@ String gastronomicos = 'Gastronomicos';
 String pyme = 'Pyme y empresas rec.';
 String obrero = 'Movimiento obrero';
 String otros = 'Otros';
+String vacio = 'Seleccione Escuela';
 
-List<String> lista269 = [
+List<String> lista259 = [
+  vacio,
   vacunacion,
   hogar,
   camion,
@@ -31,10 +33,9 @@ List<String> lista269 = [
   rabia,
   zoonosis,
   local,
-  
 ];
 List<String> lista260 = [
-  
+  vacio,
   encuestas,
   sedronar,
   caj,
@@ -44,9 +45,9 @@ List<String> lista260 = [
   obra,
   infancia,
   adultos,
-  
 ];
 List<String> lista261 = [
+  vacio,
   alimentos,
   jefatura,
   gastronomicos,
